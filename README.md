@@ -80,6 +80,6 @@ php artisan serve
 
 ## Authors
 
-* **Moises Morales** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Moises Morales** - [CoffeeCups](https://github.com/mmmoises)
 
 
