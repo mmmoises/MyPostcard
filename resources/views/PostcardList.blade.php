@@ -33,7 +33,7 @@
                       </form>
                     </th>
                     <td>{{$Postcard->title}}</td>
-                    <td id="{{$Postcard->id}}">{{$Postcard->price}}</td>
+                    <td id="{{$Postcard->id}}"> {{$Postcard->price}} €</td>
                     <td>
                       <div class="btn-group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,7 +78,7 @@
       }
 
       var price = original_price + parseFloat(additional);
-      $("#"+id).html(price);
+      $("#"+id).html(price+" €");
     }
 
     function xxl(id){
