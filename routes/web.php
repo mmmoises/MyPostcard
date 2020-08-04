@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PostcardsController@index');
+Route::post('/imagepdf', 'PostcardsController@pdf')->name('pdf.generate');
+Route::get('/imagethumb', 'PostcardsController@thumbnail')->name('thumb.generate');
