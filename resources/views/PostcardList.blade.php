@@ -1,7 +1,6 @@
 @extends('layout.main')
 
 @section('body')
-
 <div class="container mt-5">
     <h1 class="display-2 text-center mb-5">Code Challenge</h1>
     <h3 class="display-4 text-rigth mb-5">Moises Morales</h3>            
@@ -62,6 +61,8 @@
 
 @section('script')
 <script>
+   
+
 
     function changePrice(id, op, original_price){ 
       var additional = 0;
@@ -84,33 +85,32 @@
     function xxl(id){
       var result = 0;
         $.ajax({
-          url:'https://www.mypostcard.com/mobile/product_prices.php?json=1&type=get_postcard_products&currencyiso=EUR&store_id='+id,
+          url:'/api_price/?id='+id,
           type:"GET",
-          crossDomain : true,
-          async: false, 
+          async:false,
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function(json) {
-            result = json.products[0].product_options.XXL.price;
+            result = json.XXL.price;
           },
           error: function(e) {
             console.log(e);
           }
       });
+
       return result;
     }  
 
     function xl(id){
       var result = 0;
         $.ajax({
-          url:'https://www.mypostcard.com/mobile/product_prices.php?json=1&type=get_postcard_products&currencyiso=EUR&store_id='+id,
+          url:'/api_price/?id='+id,
           type:"GET",
-          crossDomain : true,
-          async: false, 
+          async:false,
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function(json) {
-            result = json.products[0].product_options.XL.price;
+            result = json.XL.price;
           },
           error: function(e) {
             console.log(e);
@@ -123,14 +123,13 @@
     function Envelope(id){
       var result = 0;
         $.ajax({
-          url:'https://www.mypostcard.com/mobile/product_prices.php?json=1&type=get_postcard_products&currencyiso=EUR&store_id='+id,
+          url:'/api_price/?id='+id,
           type:"GET",
-          crossDomain : true,
-          async: false, 
+          async:false,
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function(json) {
-            result = json.products[0].product_options.Envelope.price;
+            result = json.Envelope.price;
           },
           error: function(e) {
             console.log(e);
@@ -143,14 +142,13 @@
     function Premium(id){
       var result = 0;
         $.ajax({
-          url:'https://www.mypostcard.com/mobile/product_prices.php?json=1&type=get_postcard_products&currencyiso=EUR&store_id='+id,
+          url:'/api_price/?id='+id,
           type:"GET",
-          crossDomain : true,
-          async: false, 
+          async:false,
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function(json) {
-            result = json.products[0].product_options.Premium.price;
+            result = json.Premium.price;
           },
           error: function(e) {
             console.log(e);

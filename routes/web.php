@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PostcardsController@index');
 Route::post('/imagepdf', 'PostcardsController@pdf')->name('pdf.generate');
 Route::get('/imagethumb', 'PostcardsController@thumbnail')->name('thumb.generate');
+
+Route::get('/api_price','PostcardsController@price')->name('price.id');;

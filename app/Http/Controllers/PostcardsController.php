@@ -74,7 +74,16 @@ class PostcardsController extends Controller
     
         // return resized image
         return Image::make( $to.$filename.".jpg")->response();
-       }
+    }
+
+
+
+
+    public function price(Request $request){
+        $id = $request->id;
+        $json= Http::get('https://www.mypostcard.com/mobile/product_prices.php?json=1&type=get_postcard_products&currencyiso=EUR&store_id='.$id)->json();
+        return $json['products'][0]['product_options'];
+    }
 
     
 
